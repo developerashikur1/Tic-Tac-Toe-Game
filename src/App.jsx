@@ -86,7 +86,7 @@ export default function Game() {
 
     return(
         <>
-        <h1 className="font-bold text-center mt-[8%]  md:mb-[-10%] text-xl underline underline-offset-4 text-green-600">Tic Tac Toe</h1>
+        <h1 className="font-bold text-center mt-[8%] mb-[-10%] text-xl underline underline-offset-4 text-green-600">Tic Tac Toe</h1>
         <div className="flex flex-col md:flex-row w-full md:w-auto h-lvh justify-center align-middle items-center gap-6 md:gap-14 p-5">
             <div className="rounded-lg border p-5 w-full md:w-auto text-center flex flex-col justify-center">
                 <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
