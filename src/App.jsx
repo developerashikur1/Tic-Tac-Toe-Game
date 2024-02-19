@@ -85,18 +85,20 @@ export default function Game() {
     });
 
     return(
-        <div className="flex flex-col md:flex-row w-full h-lvh justify-center align-middle items-center gap-6 md:gap-14 p-5">
-            <h1 className="font-bold text-xl underline underline-offset-4 text-green-600">Tic Tac Toe</h1>
+        <>
+        <h1 className="font-bold text-center mt-[8%]  md:mb-[-10%] text-xl underline underline-offset-4 text-green-600">Tic Tac Toe</h1>
+        <div className="flex flex-col md:flex-row w-full md:w-auto h-lvh justify-center align-middle items-center gap-6 md:gap-14 p-5">
             <div className="rounded-lg border p-5 w-full md:w-auto text-center flex flex-col justify-center">
                 <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
             </div>
-            <div className="border p-6 rounded-lg w-full md:w-au">
+            <div className="border p-6 rounded-lg w-full md:w-auto">
                 <h1 className="font-bold text-xl">History: </h1> <br />
                 <ol className="flex flex-col gap-2">
                     {historyReader}
                 </ol>
             </div>
         </div>
+        </>
     )
 }
 
