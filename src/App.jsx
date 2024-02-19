@@ -9,13 +9,13 @@ function Square({value, onSquareClick}) {
 
 function Board({xIsNext, squares, onPlay}) {
     const winner = calculateWinner(squares);
-    
-    let status;
 
+    let status;
     if(winner) {
         status = `Winner: ${winner}`;
     }else{
         status = 'Next Player:' + ' ' + (xIsNext ? 'X' : 'O');
+        // status = 'Next Player:' + ' ' + (xIsNext ? 'You' : 'Computer');
     }
 
     function handleClick(i) {
@@ -32,7 +32,7 @@ function Board({xIsNext, squares, onPlay}) {
     }
     return(
         <>
-        <div className={`${winner ? 'text-green-600' : 'text-black'} font-bold p-2 text-4xl mb-4`}>{status}</div>
+        <div className={`${winner ? 'text-green-600' : 'text-black'} font-bold p-2 text-3xl mb-4`}>{status}</div>
         <div className="flex justify-center">
             <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
             <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -86,6 +86,7 @@ export default function Game() {
 
     return(
         <div className="flex flex-col md:flex-row w-full h-lvh justify-center align-middle items-center gap-6 md:gap-14 p-5">
+            <h1 className="font-bold text-xl underline underline-offset-4 text-green-600">Tic Tac Toe</h1>
             <div className="rounded-lg border p-5 w-full md:w-auto text-center flex flex-col justify-center">
                 <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
             </div>
